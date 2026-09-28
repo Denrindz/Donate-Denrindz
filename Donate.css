@@ -321,8 +321,9 @@ footer{
   font-size:12px;
 }
 /* =========================
-   MODAL
+   MODAL - STYLE GIỐNG ẢNH 2
 ========================= */
+
 .modal{
   position:fixed;
   inset:0;
@@ -331,273 +332,320 @@ footer{
   align-items:center;
   justify-content:center;
   padding:18px;
-  background:rgba(8,22,22,.52);
-  backdrop-filter:blur(10px);
+  background:rgba(20,25,25,.52);
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
 }
+
 .modal.show{
   display:flex;
 }
+
 .modal-box{
-  width:min(520px,100%);
+  width:min(460px,100%);
   max-height:92vh;
   overflow:auto;
-  background:#fff;
-  border-radius:26px;
-  border:1px solid rgba(255,255,255,.8);
+
+  background:#fffdf8;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:22px;
+
+  padding:28px 30px 25px;
+
   box-shadow:
-    0 30px 100px rgba(0,0,0,.25);
-  padding:28px;
+    0 28px 80px rgba(0,0,0,.20);
 }
+
+/* HEADER MODAL */
+
 .modal-head{
   display:flex;
   justify-content:space-between;
-  gap:20px;
   align-items:flex-start;
-  margin-bottom:25px;
+  gap:16px;
+  margin-bottom:22px;
 }
-.modal-label,
-.small{
-  color:var(--accent-dark);
-  font-size:11px;
+
+.modal-label{
+  color:#707575;
+  font-size:13px;
   font-weight:800;
-  letter-spacing:1px;
+  letter-spacing:1.2px;
 }
-.modal-head h2,
-.qr-title h3{
+
+.modal-head h2{
   margin:8px 0 0;
+  color:#151919;
   font-size:27px;
-  letter-spacing:-1px;
+  line-height:1.15;
+  letter-spacing:-1.1px;
+  font-weight:800;
 }
+
+.modal-description{
+  margin:9px 0 0;
+  color:#858888;
+  font-size:12px;
+  line-height:1.55;
+  font-weight:400;
+}
+
 .close{
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:#f0f3f2;
-  font-size:25px;
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #e5e5e1;
+  border-radius:10px;
+
+  background:#fff;
+  color:#707575;
+
+  font-size:21px;
   line-height:1;
+
+  transition:.18s ease;
 }
+
+.close:hover{
+  background:#f3f3ef;
+  color:#111;
+}
+
 /* =========================
    FORM
 ========================= */
+
 .field{
   margin-bottom:17px;
 }
+
 .field label{
   display:block;
   margin-bottom:8px;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.7px;
+
+  color:#252a2a;
+  font-size:14px;
+  font-weight:750;
+  letter-spacing:0;
 }
+
 .field input{
   width:100%;
-  border:1px solid var(--line);
-  border-radius:13px;
-  padding:14px;
+  height:43px;
+
+  border:1px solid #dedfdb;
+  border-radius:11px;
+
+  padding:0 13px;
+
   outline:none;
-  background:#fbfcfc;
+  background:#fff;
+
+  color:#202424;
+  font-size:13px;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
 }
+
+.field input::placeholder{
+  color:#b3b5b4;
+}
+
 .field input:focus{
-  border-color:var(--accent);
+  border-color:#c8c9c5;
+
   box-shadow:
-    0 0 0 4px var(--accent-soft);
+    0 0 0 3px rgba(0,0,0,.035);
 }
+
 /* =========================
    MONEY
 ========================= */
+
 .money{
   position:relative;
 }
+
 .money input{
-  padding-right:65px;
+  padding-right:60px;
 }
+
 .currency{
   position:absolute;
-  right:14px;
+  right:13px;
   top:50%;
+
   transform:translateY(-50%);
-  color:var(--muted);
-  font-size:12px;
+
+  color:#777b7a;
+  font-size:11px;
   font-weight:800;
 }
+
 /* =========================
    QUICK AMOUNTS
 ========================= */
+
 .quick{
   display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-  gap:8px;
-  margin-bottom:17px;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+
+  margin:4px 0 18px;
 }
+
 .quick button{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:11px;
-  padding:10px;
+  height:34px;
+
+  border:1px solid #dedfdc;
+  border-radius:10px;
+
+  background:#f1f1ed;
+
+  color:#5e6261;
+  font-size:11px;
   font-weight:800;
-  color:var(--text);
+
+  transition:.18s ease;
 }
+
 .quick button:hover{
-  border-color:var(--accent);
-  color:var(--accent-dark);
-  background:var(--accent-soft);
+  background:#e8e8e3;
+  border-color:#d1d2ce;
+  color:#222;
 }
+
+.quick button.active{
+  background:#e6e6e1;
+  border-color:#cfd0cc;
+  color:#222;
+}
+
+/* =========================
+   CREATE BUTTON
+========================= */
+
 .generate{
   width:100%;
+  height:45px;
+
+  border:0;
+  border-radius:11px;
+
+  background:#ffb914;
+  color:#171717;
+
+  font-size:13px;
+  font-weight:800;
+
+  box-shadow:none;
+
+  transition:
+    background .18s ease,
+    transform .18s ease;
 }
+
+.generate:hover{
+  background:#f5aa00;
+  transform:translateY(-1px);
+}
+
+.generate:active{
+  transform:translateY(0);
+}
+
+/* =========================
+   NOTE
+========================= */
+
 .note{
   text-align:center;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:12px;
+
+  color:#aaaead;
+  font-size:10px;
+
+  margin-top:11px;
+  line-height:1.4;
 }
+
 /* =========================
-   QR
+   QR RESULT
 ========================= */
+
 .qr-result{
   display:none;
 }
+
 .qr-result.show{
   display:block;
 }
+
 .qr-title{
   margin-bottom:20px;
 }
-.qr-box{
-  width:210px;
-  height:210px;
-  margin:0 auto 15px;
-  padding:12px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:#fff;
+
+.qr-title h3{
+  margin:8px 0 0;
+
+  color:#151919;
+  font-size:25px;
+  letter-spacing:-.8px;
 }
-.qr-box img{
-  width:100%;
-  height:100%;
-  display:block;
-}
-.payment-status{
-  text-align:center;
-  color:#a67800;
-  background:#fff7db;
-  border-radius:10px;
-  padding:9px;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:18px;
-}
-.payment-status.paid{
-  color:#13784e;
-  background:#e8f8ef;
-}
-.payment-status.expired{
-  color:#a33;
-  background:#fff0f0;
-}
-/* =========================
-   PAYMENT INFO
-========================= */
-.payment-info{
-  border-top:1px solid var(--line);
-}
-.info-row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  font-size:13px;
-}
-.info-label{
-  color:var(--muted);
-}
-.info-value{
-  text-align:right;
-  font-weight:750;
-  max-width:60%;
-  word-break:break-word;
-}
-.copy-btn{
-  margin-left:7px;
-  border:0;
-  border-radius:7px;
-  background:var(--accent-soft);
-  color:var(--accent-dark);
-  padding:5px 7px;
-  font-size:10px;
-  font-weight:800;
-}
-/* =========================
-   TIMER
-========================= */
-.timer{
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-  margin:18px 0;
-}
-.timer strong{
-  color:var(--text);
-  margin-left:4px;
-}
-/* =========================
-   NEW CODE
-========================= */
-.new-code{
-  width:100%;
-  background:#eef2f1;
-  color:var(--text);
-}
-/* =========================
-   ERROR
-========================= */
-.error{
-  display:none;
-  color:var(--danger);
-  background:#fff1f1;
-  padding:10px 12px;
-  border-radius:10px;
-  margin:10px 0;
-  font-size:12px;
-}
+
 /* =========================
    MOBILE
 ========================= */
+
 @media(max-width:600px){
-  header{
-    margin-top:12px;
+
+  .modal{
+    padding:15px;
   }
-  .hero{
-    padding:65px 0 40px;
-  }
-  h1{
-    letter-spacing:-2.5px;
-  }
-  .progress-card,
-  .supporters,
-  .donate-section{
-    padding:22px;
-  }
-  .progress-top{
-    align-items:flex-start;
-  }
-  .progress-bottom,
-  .deadline{
-    flex-direction:column;
-    gap:7px;
-  }
-  .quick{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
+
   .modal-box{
-    padding:22px;
+    width:100%;
+    border-radius:20px;
+    padding:25px 18px 21px;
   }
-  .info-row{
-    align-items:flex-start;
+
+  .modal-head{
+    margin-bottom:20px;
+  }
+
+  .modal-head h2{
+    font-size:24px;
+  }
+
+  .modal-description{
+    font-size:11px;
+    max-width:340px;
+  }
+
+  .field label{
+    font-size:13px;
+  }
+
+  .field input{
+    height:43px;
+  }
+
+  .quick{
+    gap:6px;
+  }
+
+  .quick button{
+    height:34px;
+    font-size:10px;
+  }
+
+  .generate{
+    height:44px;
   }
 }
